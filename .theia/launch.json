@@ -1,0 +1,99 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "lab2_part3",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "lab2_part3"
+        },
+        {
+            "name": "Default_Project",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Default_Project",
+                "resourceId": "/Default_Project"
+            },
+            "debuggerSettings": {
+                "targetConfigs/MSPM0G3507.ccxml": {
+                    "Texas Instruments XDS110 USB Debug Probe/CORTEX_M0P": {
+                        "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues/>\n"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Default_Project (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Default_Project",
+                "resourceId": "/Default_Project/adc.c"
+            }
+        },
+        {
+            "name": "Default_Project (2)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Default_Project",
+                "resourceId": "/Default_Project/LaunchPad.c"
+            }
+        },
+        {
+            "name": "I2C_Master_Testing (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "I2C_Master_Testing",
+                "resourceId": "/I2C_Master_Testing/LaunchPad.c"
+            }
+        },
+        {
+            "name": "I2C_Master_Testing (2)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "I2C_Master_Testing",
+                "resourceId": "/I2C_Master_Testing/i2c_testing_main.c"
+            }
+        },
+        {
+            "name": "I2C_Master_Testing (3)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "I2C_Master_Testing",
+                "resourceId": "/I2C_Master_Testing"
+            }
+        },
+        {
+            "name": "I2C_Master_Testing (4)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "I2C_Master_Testing",
+                "resourceId": "/I2C_Master_Testing/mspm0g3507.cmd"
+            }
+        },
+        {
+            "name": "Default_Project (3)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Default_Project",
+                "resourceId": "/Default_Project/main.c"
+            }
+        },
+        {
+            "name": "lab3_part1",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part1",
+                "resourceId": "/lab3_part1/adc.c"
+            }
+        }
+    ]
+}
