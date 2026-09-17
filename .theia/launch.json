@@ -8,12 +8,12 @@
             "project": "lab2_part3"
         },
         {
-            "name": "Default_Project",
+            "name": "lab3_part4",
             "type": "ccs-debug",
             "request": "launch",
             "projectInfo": {
-                "name": "Default_Project",
-                "resourceId": "/Default_Project"
+                "name": "lab3_part4",
+                "resourceId": "/lab3_part4"
             },
             "debuggerSettings": {
                 "targetConfigs/MSPM0G3507.ccxml": {
@@ -93,6 +93,24 @@
             "projectInfo": {
                 "name": "lab3_part1",
                 "resourceId": "/lab3_part1/adc.c"
+            }
+        },
+        {
+            "name": "lab3_part5",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part5",
+                "resourceId": "/lab3_part5/main.c"
+            }
+        },
+        {
+            "name": "lab3_part5 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part5",
+                "resourceId": "/lab3_part5"
             }
         }
     ]
