@@ -25,7 +25,7 @@
 
 .thumb_func
 my_asm_bitset:
-    ORRS R0, R0, R1
+    ORRS R0, R0, R1             // r0 = reg_value or bit_mask
     BX LR
 
 //-----------------------------------------------------------------------------

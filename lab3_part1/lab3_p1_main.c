@@ -1,11 +1,11 @@
 //*****************************************************************************
 //*****************************    C Source Code    ***************************
 //*****************************************************************************
-//  DESIGNER NAME:  TBD
+//  DESIGNER NAME:  Ethan Callahan
 //
-//       LAB NAME:  TBD
+//       LAB NAME:  Lab 3 Part 1
 //
-//      FILE NAME:  main.c
+//      FILE NAME:  lab3_p1_main.c
 //
 //-----------------------------------------------------------------------------
 //
@@ -39,20 +39,7 @@
 // Define function prototypes used by the program
 //-----------------------------------------------------------------------------
 
-void msp_printf(char* buffer, unsigned int value)
-{
-    unsigned int i = 0; 
-    unsigned int len = 0;
-    char string[80];
-
-    len = sprintf(string, buffer, value);
-
-    // Walk through array to send each character to serial port
-    for ( i = 0 ; i< len; i++)
-    {
-        UART_out_char(string[i]);
-    } /* for */
-} /* msp printf */
+void msp_printf(char* buffer, unsigned int value);
 
 //-----------------------------------------------------------------------------
 // Define symbolic constants used by the program
@@ -100,7 +87,7 @@ int main(void)
 
     clock_init_40mhz();
     launchpad_gpio_init();
-    lp_leds_init();
+    // lp_leds_init();
 
     UART_init(115200);
 
@@ -154,3 +141,34 @@ int main(void)
 
 } /* main */
 
+//-----------------------------------------------------------------------------
+// DESCRIPTION:
+//  This function formats an integer value into a string according to a given
+//  format and sends the resulting string to a serial port
+//
+// INPUT PARAMETERS:
+//  buffer: A format string used to format the integer value. It follows the
+//          format specifiers used by `sprintf`.
+//  value:  The integer value to be formatted and included in the formatted string
+//
+// OUTPUT PARAMETERS:
+//  none
+//
+// RETURN:
+//  uint32_t - The modified register value with the specified bit(s) set.
+// -----------------------------------------------------------------------------
+
+void msp_printf(char* buffer, unsigned int value)
+{
+    unsigned int i = 0; 
+    unsigned int len = 0;
+    char string[80];
+
+    len = sprintf(string, buffer, value);
+
+    // Walk through array to send each character to serial port
+    for ( i = 0 ; i< len; i++)
+    {
+        UART_out_char(string[i]);
+    } /* for */
+} /* msp printf */

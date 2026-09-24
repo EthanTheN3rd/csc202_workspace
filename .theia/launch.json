@@ -112,6 +112,60 @@
                 "name": "lab3_part5",
                 "resourceId": "/lab3_part5"
             }
+        },
+        {
+            "name": "lab3_part1 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part1",
+                "resourceId": "/lab3_part1"
+            }
+        },
+        {
+            "name": "lab3_part4 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part4",
+                "resourceId": "/lab3_part4/lab3_p4_main.c"
+            }
+        },
+        {
+            "name": "lab3_part5 (2)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part5",
+                "resourceId": "/lab3_part5/lab3_p5_main.c"
+            }
+        },
+        {
+            "name": "lab3_part1 (2)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part1",
+                "resourceId": "/lab3_part1/lab3_p1_main.c"
+            }
+        },
+        {
+            "name": "lab4",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab4",
+                "resourceId": "/lab4"
+            }
+        },
+        {
+            "name": "lab4_part1 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab4_part1",
+                "resourceId": "/lab4_part1/clock.c"
+            }
         }
     ]
 }
