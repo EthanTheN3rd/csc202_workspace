@@ -3,7 +3,7 @@
 //*****************************************************************************
 //  DESIGNER NAME:  Ethan Callahan
 //
-//       LAB NAME:  Lab 4
+//       LAB NAME:  Lab 5
 //
 //      FILE NAME:  main.c
 //
@@ -75,7 +75,7 @@ int main(void)
   seg7_deinit();
   keypad_init();
   leds_init();
-  
+
   run_lab5_part3();
   run_lab5_part4();
 
@@ -156,6 +156,7 @@ void run_lab5_part2(void)
         {
           cycle_count++;
           current_state = DISPLAY;
+
           // debounce
           msec_delay(5);
           while (is_lpsw_down(LP_SW2_IDX))
@@ -167,10 +168,13 @@ void run_lab5_part2(void)
       case DISPLAY:
         uint8_t seg7_data = (high_nibble << 4) | (low_nibble & 0x0F);
 
+        // The value will be displayed on either DIG0 or DIG2
+        // depending on if PB1 is pressed.
         if (is_pb_down(PB1_IDX))
         {
           seg7_on(seg7_data, SEG7_DIG2_ENABLE_IDX);
 
+          // debounce
           msec_delay(5);
           while (is_pb_down(PB1_IDX))
             ;
@@ -185,6 +189,7 @@ void run_lab5_part2(void)
         {
           current_state = GET_LOW;
           seg7_off();
+
           // debounce
           msec_delay(5);
           while (is_lpsw_down(LP_SW2_IDX))
@@ -203,7 +208,8 @@ void run_lab5_part2(void)
 void run_lab5_part3(void)
 {
   int cycle_count = 0;
-  while (cycle_count < 8) {
+  while (cycle_count < 8)
+  {
     leds_enable();
     leds_off();
 
@@ -220,12 +226,17 @@ void run_lab5_part3(void)
 void run_lab5_part4(void)
 {
   leds_off();
-  int cycle_count = 0;
-  uint8_t key_press = keypad_scan();
-  while (key_press == NO_KEY_PRESSED) {
+  int     cycle_count = 0;
+  uint8_t key_press   = keypad_scan();
+
+  // keep scanning until we see a key pressed
+  while (key_press == NO_KEY_PRESSED)
+  {
     key_press = keypad_scan();
   }
-  for (int i = 0; i < key_press; i++) {
+
+  for (int i = 0; i < key_press; i++)
+  {
     leds_on(0xFF);
     msec_delay(500);
     leds_off();
