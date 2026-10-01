@@ -166,6 +166,42 @@
                 "name": "lab4_part1",
                 "resourceId": "/lab4_part1/clock.c"
             }
+        },
+        {
+            "name": "lab5 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab5",
+                "resourceId": "/lab5/main.c"
+            }
+        },
+        {
+            "name": "lab5 (2)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab5",
+                "resourceId": "/lab5"
+            }
+        },
+        {
+            "name": "lab3_part1 (3)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab3_part1",
+                "resourceId": "/lab3_part1/mspm0g3507.cmd"
+            }
+        },
+        {
+            "name": "lab5 (3)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab5",
+                "resourceId": "/lab5/LaunchPad.h"
+            }
         }
     ]
 }
