@@ -202,6 +202,51 @@
                 "name": "lab5",
                 "resourceId": "/lab5/LaunchPad.h"
             }
+        },
+        {
+            "name": "lab6",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab6",
+                "resourceId": "/lab6"
+            }
+        },
+        {
+            "name": "lab6 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab6",
+                "resourceId": "/lab6/adc.h"
+            }
+        },
+        {
+            "name": "lab6 (2)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab6",
+                "resourceId": "/lab6/LaunchPad.h"
+            }
+        },
+        {
+            "name": "lab6 (3)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab6",
+                "resourceId": "/lab6/main.c"
+            }
+        },
+        {
+            "name": "lab6 (4)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab6",
+                "resourceId": "/lab6/lcd1602.h"
+            }
         }
     ]
 }
