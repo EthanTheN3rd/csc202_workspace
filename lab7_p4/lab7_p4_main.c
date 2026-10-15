@@ -1,11 +1,11 @@
 //*****************************************************************************
 //*****************************    C Source Code    ***************************
 //*****************************************************************************
-//  DESIGNER NAME:  TBD
+//  DESIGNER NAME:  Ethan Callahan
 //
-//       LAB NAME:  TBD
+//       LAB NAME:  Lab 7
 //
-//      FILE NAME:  main.c
+//      FILE NAME:  lab7_p4_main.c
 //
 //-----------------------------------------------------------------------------
 //
@@ -13,7 +13,11 @@
 //    This project runs on the LP_MSPM0G3507 LaunchPad board interfacing to
 //    the CSC202 Expansion board.
 //
-//    This code ... *** COMPLETE THIS BASED ON LAB REQUIREMENTS ***
+//    This program uses the LCD and LED bar to display a counter that loops
+//    from 0 to 99.
+//    A GPIO interrupt is used to detect button presses from PB1 and PB2
+//    upon pressing, PB1 and PB2 update flags to end the program and display
+//    text on the LCD.
 //
 //*****************************************************************************
 //*****************************************************************************
@@ -57,7 +61,7 @@ void config_pb2_interrupts(void);
 // Define global variables and structures here.
 // NOTE: when possible avoid using global variables
 //----------------------------------------------------------------------------
-bool PB2_PRESSED = true;
+bool PB2_PRESSED     = true;
 bool PROGRAM_RUNNING = true;
 
 int main(void)
@@ -91,27 +95,31 @@ int main(void)
     ;
 } /* main */
 
-void run_lab7_part4(void) {
-  int  cntr = 0;
+void run_lab7_part4(void)
+{
+  int cntr = 0;
   while (PROGRAM_RUNNING)
   {
     lcd_clear();
     lcd_set_ddram_addr(LCD_LINE1_ADDR + LCD_CHAR_POSITION_7);
     lcd_write_byte(cntr);
     leds_on(cntr);
+
+    // write "PB2 PRESSED" on lcd line 2, if the flag is active 
     if (PB2_PRESSED)
     {
       lcd_set_ddram_addr(LCD_LINE2_ADDR + LCD_CHAR_POSITION_4);
-      lcd_write_string("PB2_PRESSED");
+      lcd_write_string("PB2 PRESSED");
     }
+    
     if (cntr == 99)
     {
       cntr = -1;
     }
+
     cntr++;
     msec_delay(200);
   }
-
 }
 
 void config_pb1_interrupts(void)
@@ -143,15 +151,19 @@ void GROUP1_IRQHandler(void)
   uint32_t group_iidx_status;
   uint32_t gpio_mis = GPIOA->CPU_INT.MIS;
 
-  do {
+  do
+  {
     group_iidx_status = CPUSS->INT_GROUP[1].IIDX;
-    switch (group_iidx_status) {
+    switch (group_iidx_status)
+    {
 
       // GPIOA interrupt
       case (CPUSS_INT_GROUP_IIDX_STAT_INT0):
         gpio_mis = GPIOA->CPU_INT.MIS;
-        if ((gpio_mis & GPIO_CPU_INT_MIS_DIO15_MASK) == GPIO_CPU_INT_MIS_DIO15_SET)
+        if ((gpio_mis & GPIO_CPU_INT_MIS_DIO15_MASK) ==
+            GPIO_CPU_INT_MIS_DIO15_SET)
         {
+          // Toggle PB2_PRESSED flag
           if (PB2_PRESSED)
           {
             PB2_PRESSED = false;
@@ -168,9 +180,10 @@ void GROUP1_IRQHandler(void)
       // GPIOB interrupt
       case (CPUSS_INT_GROUP_IIDX_STAT_INT1):
         gpio_mis = GPIOB->CPU_INT.MIS;
-        if ((gpio_mis & GPIO_CPU_INT_MIS_DIO18_MASK) == GPIO_CPU_INT_MIS_DIO18_SET)
+        if ((gpio_mis & GPIO_CPU_INT_MIS_DIO18_MASK) ==
+            GPIO_CPU_INT_MIS_DIO18_SET)
         {
-          PROGRAM_RUNNING = false;
+          PROGRAM_RUNNING     = false;
           GPIOB->CPU_INT.ICLR = GPIO_CPU_INT_ICLR_DIO18_CLR;
         }
         break;
@@ -179,5 +192,4 @@ void GROUP1_IRQHandler(void)
         break;
     }
   } while (PROGRAM_RUNNING && group_iidx_status != 0);
-
 }

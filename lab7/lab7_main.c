@@ -1,11 +1,11 @@
 //*****************************************************************************
 //*****************************    C Source Code    ***************************
 //*****************************************************************************
-//  DESIGNER NAME:  TBD
+//  DESIGNER NAME:  Ethan Callahan
 //
-//       LAB NAME:  TBD
+//       LAB NAME:  Lab 7
 //
-//      FILE NAME:  main.c
+//      FILE NAME:  lab7_main.c
 //
 //-----------------------------------------------------------------------------
 //
@@ -13,7 +13,12 @@
 //    This project runs on the LP_MSPM0G3507 LaunchPad board interfacing to
 //    the CSC202 Expansion board.
 //
-//    This code ... *** COMPLETE THIS BASED ON LAB REQUIREMENTS ***
+//    This lab demonstraits 2 asynchronous timed events using the SysTick
+//    interrupt. The 7 segment display will constantly flash an SOS message
+//    in morse code; this is timed using SysTick.
+//    The main function will handle a message scrolling across line 2 on the
+//    LCD. When PB1 is pressed, the program moves to part 2 and the LCD will 
+//    scroll a new, longer message. When PB1 pressed again, the program exits.
 //
 //*****************************************************************************
 //*****************************************************************************
