@@ -301,6 +301,24 @@
                 "name": "lab8_p3",
                 "resourceId": "/lab8_p3"
             }
+        },
+        {
+            "name": "lab9",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab9",
+                "resourceId": "/lab9"
+            }
+        },
+        {
+            "name": "lab10",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab10",
+                "resourceId": "/lab10"
+            }
         }
     ]
 }
